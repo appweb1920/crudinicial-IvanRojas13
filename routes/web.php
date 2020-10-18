@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {return "hola";});
-Route::get('/hola', 'HomeController@Saluda');
-//Route::post('/', function () {return view('welcome');});
+//Route::get('/', function () {return "hola";});
+Route::get('/', 'HomeController@Saluda');
+Route::post('/puntosRecoleccion', 'HomeController@vistaPuntos');
 
