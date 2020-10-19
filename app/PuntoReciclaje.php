@@ -7,15 +7,15 @@ use App\Recolector;
 
 class PuntoReciclaje extends Model
 {
-    public $table = 'puntosreciclaje';
+    protected $table = 'puntosreciclaje';
     protected $fillable = [
         'direccion', 'tipoBasura', 'horaApertura', 'horaCierre'
     ];
     //protected $table="puntos";
-    /*protected $fillable=['nombre'];
+    //protected $fillable=['nombre'];
 
-    public function getRecolectores()
+    /*public function getRecolectores()
     {
-        return $recolectores = Recolector::where('idPunto',$this->id)->get();
+        return $recolectores = Recolector::where('id',$this->id)->get();
     }*/
 }

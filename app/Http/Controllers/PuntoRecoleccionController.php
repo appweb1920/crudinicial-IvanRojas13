@@ -15,13 +15,13 @@ class PuntoRecoleccionController extends Controller
      */
     public function index()
     {
-        $puntosreciclaje = PuntoReciclaje::latest()->paginate(5);
+        /*$puntosreciclaje = PuntoReciclaje::latest()->paginate(5);
   
         return view('index',compact('puntosreciclaje'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+            ->with('i', (request()->input('page', 1) - 1) * 5);*/
 
-        /*$puntosrecoleccion = PuntoReciclaje::all();
-        return view('puntosrecoleccion')->with($puntosrecoleccion);*/
+        $puntosreciclaje = PuntoReciclaje::all();
+        return view('index')->with('puntosreciclaje',$puntosreciclaje);
         //return($puntosrecoleccion);
     }
 
@@ -67,6 +67,7 @@ class PuntoRecoleccionController extends Controller
         //$puntorecoleccion = PuntoReciclaje::find($id);
         //$recolectores = Recolector::where('idPunto',$id)->get();
         //return view('detallePuntoReciclaje')->with($puntorecoleccion);
+
         return view('show',compact('puntoreciclaje'));
     }
 

@@ -29,7 +29,7 @@
         </tr>
         @foreach ($puntosreciclaje as $punto)
         <tr>
-            <td>{{ ++$i }}</td>
+            <td>{{ $punto->id }}</td>
             <td>{{ $punto->direccion }}</td>
             <td>{{ $punto->tipoBasura }}</td>
             <td>{{ $punto->horaApertura }}</td>
@@ -51,6 +51,5 @@
         @endforeach
     </table>
   
-    {!! $puntosreciclaje->links() !!}
       
 @endsection
