@@ -16,7 +16,7 @@ class Recolectores extends Migration
         Schema::create('recolectores', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->integer('idPunto');
+            $table->integer('diaRecoleccion');
             $table->timestamps();
         });
     }

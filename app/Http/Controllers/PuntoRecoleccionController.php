@@ -51,7 +51,7 @@ class PuntoRecoleccionController extends Controller
     {
         $puntorecoleccion = PuntoReciclaje::find($id);
         //$recolectores = Recolector::where('idPunto',$id)->get();
-        return view('detallePuntoRecoclaje')->with($puntoreciclaje);
+        return view('detallePuntoReciclaje')->with($puntorecoleccion);
     }
 
     /**

@@ -15,7 +15,10 @@ class PuntosReciclaje extends Migration
     {
         Schema::create('puntosreciclaje', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
+            $table->string('direccion');
+            $table->string('tipoBasura');
+            $table->integer('horaApertura');
+            $table->integer('horaCierre');
             $table->timestamps();
         });
     }
