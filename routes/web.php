@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 //Route::get('/', function () {return "hola";});
-Route::get('/', 'PuntoRecoleccionController@index');
+//Route::get('/', 'PuntoRecoleccionController@index');
+Route::resource('puntosrecoleccion','PuntoRecoleccionController');
 /*Route::post('/puntosRecoleccion', 'HomeController@vistaPuntos');
 
 Route::get('/editar{id}', 'HomeController@Edita');

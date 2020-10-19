@@ -15,8 +15,13 @@ class PuntoRecoleccionController extends Controller
      */
     public function index()
     {
-        $puntosrecoleccion = PuntoReciclaje::all();
-        return view('puntosrecoleccion')->with($puntosrecoleccion);
+        $products = Product::latest()->paginate(5);
+  
+        return view('puntosreciclaje.index',compact('puntosreciclaje'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
+
+        /*$puntosrecoleccion = PuntoReciclaje::all();
+        return view('puntosrecoleccion')->with($puntosrecoleccion);*/
         //return($puntosrecoleccion);
     }
 
@@ -27,7 +32,7 @@ class PuntoRecoleccionController extends Controller
      */
     public function create()
     {
-        //
+        return view('puntosreciclaje.create');
     }
 
     /**
@@ -38,7 +43,17 @@ class PuntoRecoleccionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'direccion' => 'required',
+            'tipoBasura' => 'required',
+            'horaApertura' => 'required',
+            'horaCierre' => 'required',
+        ]);
+  
+        PuntoReciclaje::create($request->all());
+   
+        return redirect()->route('puntosreciclaje.index')
+                        ->with('success','Punto de recoleccion añadido');
     }
 
     /**
@@ -49,9 +64,10 @@ class PuntoRecoleccionController extends Controller
      */
     public function show($id)
     {
-        $puntorecoleccion = PuntoReciclaje::find($id);
+        //$puntorecoleccion = PuntoReciclaje::find($id);
         //$recolectores = Recolector::where('idPunto',$id)->get();
-        return view('detallePuntoReciclaje')->with($puntorecoleccion);
+        //return view('detallePuntoReciclaje')->with($puntorecoleccion);
+        return view('puntosreciclaje.show',compact('puntosreciclaje'));
     }
 
     /**
@@ -62,7 +78,7 @@ class PuntoRecoleccionController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('puntosreciclaje.show',compact('puntosreciclaje'));
     }
 
     /**
@@ -74,7 +90,17 @@ class PuntoRecoleccionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'direccion' => 'required',
+            'tipoBasura' => 'required',
+            'horaApertura' => 'required',
+            'horaCierre' => 'required',
+        ]);
+  
+        $puntoreciclaje->update($request->all());
+  
+        return redirect()->route('puntosreciclaje.index')
+                        ->with('success','Se actualizo el punto');
     }
 
     /**
@@ -85,6 +111,9 @@ class PuntoRecoleccionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product->delete();
+  
+        return redirect()->route('puntosreciclaje.index')
+                        ->with('success','Borrado exitosamente');
     }
 }

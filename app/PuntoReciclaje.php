@@ -7,7 +7,10 @@ use App\Recolector;
 
 class PuntoReciclaje extends Model
 {
-    protected $table="puntos";
+    protected $fillable = [
+        'direccion', 'tipoBasura', 'horaApertura', 'horaCierre'
+    ];
+    //protected $table="puntos";
     /*protected $fillable=['nombre'];
 
     public function getRecolectores()
