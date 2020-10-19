@@ -15,9 +15,9 @@ class PuntoRecoleccionController extends Controller
      */
     public function index()
     {
-        $puntosreciclaje = PuntoReciclaje::latest()->paginate(5);
+        $puntosreciclajes = PuntoReciclaje::latest()->paginate(5);
   
-        return view('puntosreciclaje.index',compact('puntosreciclaje'))
+        return view('puntosreciclajes.index',compact('puntosreciclajes'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
 
         /*$puntosrecoleccion = PuntoReciclaje::all();
@@ -32,7 +32,7 @@ class PuntoRecoleccionController extends Controller
      */
     public function create()
     {
-        return view('puntosreciclaje.create');
+        return view('puntosreciclajes.create');
     }
 
     /**
@@ -52,7 +52,7 @@ class PuntoRecoleccionController extends Controller
   
         PuntoReciclaje::create($request->all());
    
-        return redirect()->route('puntosreciclaje.index')
+        return redirect()->route('puntosreciclajes.index')
                         ->with('success','Punto de recoleccion añadido');
     }
 
@@ -67,7 +67,7 @@ class PuntoRecoleccionController extends Controller
         //$puntorecoleccion = PuntoReciclaje::find($id);
         //$recolectores = Recolector::where('idPunto',$id)->get();
         //return view('detallePuntoReciclaje')->with($puntorecoleccion);
-        return view('puntosreciclaje.show',compact('puntoreciclaje'));
+        return view('puntosreciclajes.show',compact('puntoreciclaje'));
     }
 
     /**
@@ -78,7 +78,7 @@ class PuntoRecoleccionController extends Controller
      */
     public function edit(PuntoReciclaje $puntoreciclaje)
     {
-        return view('puntosreciclaje.show',compact('puntoreciclaje'));
+        return view('puntosreciclajes.show',compact('puntoreciclaje'));
     }
 
     /**
@@ -113,7 +113,7 @@ class PuntoRecoleccionController extends Controller
     {
         $puntoreciclaje->delete();
   
-        return redirect()->route('puntosreciclaje.index')
+        return redirect()->route('puntosreciclajes.index')
                         ->with('success','Borrado exitosamente');
     }
 }
