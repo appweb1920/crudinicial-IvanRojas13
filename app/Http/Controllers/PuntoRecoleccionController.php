@@ -15,7 +15,7 @@ class PuntoRecoleccionController extends Controller
      */
     public function index()
     {
-        $products = Product::latest()->paginate(5);
+        $puntosreciclaje = PuntoReciclaje::latest()->paginate(5);
   
         return view('puntosreciclaje.index',compact('puntosreciclaje'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
@@ -111,7 +111,7 @@ class PuntoRecoleccionController extends Controller
      */
     public function destroy($id)
     {
-        $product->delete();
+        $puntoreciclaje->delete();
   
         return redirect()->route('puntosreciclaje.index')
                         ->with('success','Borrado exitosamente');
