@@ -35,7 +35,7 @@
             <td>{{ $punto->horaApertura }}</td>
             <td>{{ $punto->horaCierre }}</td>
             <td>
-                <form action="{{ route('punto.destroy',$punto->id) }}" method="POST">
+                <form action="{{ route('puntosrecoleccion.destroy',$punto->id) }}" method="POST">
    
                     <a class="btn btn-info" href="{{ route('punto.show',$punto->id) }}">Muestra</a>
     
