@@ -21,8 +21,10 @@
     <table class="table table-bordered">
         <tr>
             <th>No</th>
-            <th>Nombre</th>
-            <th>Details</th>
+            <th>direccion</th>
+            <th>tipoBasura</th>
+            <th>horaApertura</th>
+            <th>horaCierre</th>
             <th width="280px">Action</th>
         </tr>
         @foreach ($puntosrecoleccion as $punto)
