@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layaout')
  
 @section('content')
     <div class="row">
@@ -7,7 +7,7 @@
                 <h2>CRUD Puntos Recoleccion</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('puntosrecoleccion.create') }}"> Crear</a>
+                <a class="btn btn-success" href="{{ route('create') }}"> Crear</a>
             </div>
         </div>
     </div>
@@ -27,7 +27,7 @@
             <th>horaCierre</th>
             <th width="280px">Action</th>
         </tr>
-        @foreach ($puntosrecoleccion as $punto)
+        @foreach ($puntosreciclaje as $punto)
         <tr>
             <td>{{ ++$i }}</td>
             <td>{{ $punto->direccion }}</td>
@@ -35,11 +35,11 @@
             <td>{{ $punto->horaApertura }}</td>
             <td>{{ $punto->horaCierre }}</td>
             <td>
-                <form action="{{ route('puntosrecoleccion.destroy',$punto->id) }}" method="POST">
+                <form action="{{ route('destroy',$punto->id) }}" method="POST">
    
-                    <a class="btn btn-info" href="{{ route('punto.show',$punto->id) }}">Muestra</a>
+                    <a class="btn btn-info" href="{{ route('show',$punto->id) }}">Muestra</a>
     
-                    <a class="btn btn-primary" href="{{ route('punto.edit',$punto->id) }}">Edita</a>
+                    <a class="btn btn-primary" href="{{ route('edit',$punto->id) }}">Edita</a>
    
                     @csrf
                     @method('DELETE')
@@ -51,6 +51,6 @@
         @endforeach
     </table>
   
-    {!! $puntosrecoleccion->links() !!}
+    {!! $puntosreciclaje->links() !!}
       
 @endsection

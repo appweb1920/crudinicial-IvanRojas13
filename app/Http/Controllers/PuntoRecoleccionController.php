@@ -15,9 +15,9 @@ class PuntoRecoleccionController extends Controller
      */
     public function index()
     {
-        $puntosreciclajes = PuntoReciclaje::latest()->paginate(5);
+        $puntosreciclaje = PuntoReciclaje::latest()->paginate(5);
   
-        return view('puntosreciclajes.index',compact('puntosreciclajes'))
+        return view('index',compact('puntosreciclaje'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
 
         /*$puntosrecoleccion = PuntoReciclaje::all();
@@ -32,7 +32,7 @@ class PuntoRecoleccionController extends Controller
      */
     public function create()
     {
-        return view('puntosreciclajes.create');
+        return view('create');
     }
 
     /**
@@ -52,7 +52,7 @@ class PuntoRecoleccionController extends Controller
   
         PuntoReciclaje::create($request->all());
    
-        return redirect()->route('puntosreciclajes.index')
+        return redirect()->route('index')
                         ->with('success','Punto de recoleccion añadido');
     }
 
@@ -67,7 +67,7 @@ class PuntoRecoleccionController extends Controller
         //$puntorecoleccion = PuntoReciclaje::find($id);
         //$recolectores = Recolector::where('idPunto',$id)->get();
         //return view('detallePuntoReciclaje')->with($puntorecoleccion);
-        return view('puntosreciclajes.show',compact('puntoreciclaje'));
+        return view('show',compact('puntoreciclaje'));
     }
 
     /**
@@ -78,7 +78,7 @@ class PuntoRecoleccionController extends Controller
      */
     public function edit(PuntoReciclaje $puntoreciclaje)
     {
-        return view('puntosreciclajes.show',compact('puntoreciclaje'));
+        return view('show',compact('puntoreciclaje'));
     }
 
     /**
@@ -99,7 +99,7 @@ class PuntoRecoleccionController extends Controller
   
         $puntoreciclaje->update($request->all());
   
-        return redirect()->route('puntosreciclaje.index')
+        return redirect()->route('index')
                         ->with('success','Se actualizo el punto');
     }
 
@@ -113,7 +113,7 @@ class PuntoRecoleccionController extends Controller
     {
         $puntoreciclaje->delete();
   
-        return redirect()->route('puntosreciclajes.index')
+        return redirect()->route('index')
                         ->with('success','Borrado exitosamente');
     }
 }

@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layaout')
 @section('content')
     <div class="row">
         <div class="col-lg-12 margin-tb">
@@ -6,7 +6,7 @@
                 <h2>Muestra</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('puntosrecoleccion.index') }}"> Atras</a>
+                <a class="btn btn-primary" href="{{ route('index') }}"> Atras</a>
             </div>
         </div>
     </div>
@@ -15,25 +15,25 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Direccion:</strong>
-                {{ $puntorecoleccion->direccion }}
+                {{ $puntoreciclaje->direccion }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Tipo Basura:</strong>
-                {{ $puntorecoleccion->tipoBasura }}
+                {{ $puntoreciclaje->tipoBasura }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Hora Apertura:</strong>
-                {{ $puntorecoleccion->horaApertura }}
+                {{ $puntoreciclaje->horaApertura }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Hora Cierre:</strong>
-                {{ $puntorecoleccion->horaCierre }}
+                {{ $puntoreciclaje->horaCierre }}
             </div>
         </div>
     </div>

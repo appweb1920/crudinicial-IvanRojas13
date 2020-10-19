@@ -13,7 +13,7 @@ class PuntosReciclaje extends Migration
      */
     public function up()
     {
-        Schema::create('puntosreciclajes', function (Blueprint $table) {
+        Schema::create('puntosreciclaje', function (Blueprint $table) {
             $table->id();
             $table->string('direccion');
             $table->string('tipoBasura');
@@ -30,6 +30,6 @@ class PuntosReciclaje extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('puntosreciclajes');
+        Schema::dropIfExists('puntosreciclaje');
     }
 }

@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layaout')
   
 @section('content')
 <div class="row">
@@ -7,12 +7,12 @@
             <h2>Agrega Punto Recoleccion</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('puntosrecoleccion.index') }}"> Atras</a>
+            <a class="btn btn-primary" href="{{ route('index') }}"> Atras</a>
         </div>
     </div>
 </div>
    
-<form action="{{ route('puntosrecoleccion.store') }}" method="POST">
+<form action="{{ route('store') }}" method="POST">
     @csrf
   
      <div class="row">

@@ -15,6 +15,33 @@ use Illuminate\Support\Facades\Route;
 
 //Route::get('/', function () {return "hola";});
 //Route::get('/', 'PuntoRecoleccionController@index');
+Route::get('create', 'PuntoRecoleccionController@create');
+// agregar nombre
+Route::get('create', 'PuntoRecoleccionController@create')
+         ->name('create');//con este llamas en la vista
+
+Route::get('index', 'PuntoRecoleccionController@index');
+// agregar nombre
+Route::get('index', 'PuntoRecoleccionController@index')
+         ->name('index');//con este llamas en la vista
+
+Route::post('store', 'PuntoRecoleccionController@store');
+// agregar nombre
+Route::post('store', 'PuntoRecoleccionController@store')
+         ->name('store');//con este llamas en la vista
+
+Route::get('destroy', 'PuntoRecoleccionController@destroy');
+// agregar nombre
+Route::post('destroy', 'PuntoRecoleccionController@destroy')
+         ->name('destroy');//con este llamas en la vista
+
+Route::get('show', 'PuntoRecoleccionController@show');
+Route::get('show', 'PuntoRecoleccionController@show')
+         ->name('show');//con este llamas en la vista
+
+Route::get('edit', 'PuntoRecoleccionController@edit');
+Route::get('edit', 'PuntoRecoleccionController@edit')
+         ->name('edit');//con este llamas en la vista   
 Route::resource('puntosReciclaje','PuntoRecoleccionController');
 /*Route::post('/puntosRecoleccion', 'HomeController@vistaPuntos');
 
