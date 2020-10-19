@@ -30,9 +30,9 @@ Route::post('store', 'PuntoRecoleccionController@store');
 Route::post('store', 'PuntoRecoleccionController@store')
          ->name('store');//con este llamas en la vista
 
-Route::get('destroy', 'PuntoRecoleccionController@destroy');
+Route::delete('destroy', 'PuntoRecoleccionController@destroy');
 // agregar nombre
-Route::post('destroy', 'PuntoRecoleccionController@destroy')
+Route::delete('destroy', 'PuntoRecoleccionController@destroy')
          ->name('destroy');//con este llamas en la vista
 
 Route::get('show', 'PuntoRecoleccionController@show');
@@ -40,8 +40,13 @@ Route::get('show', 'PuntoRecoleccionController@show')
          ->name('show');//con este llamas en la vista
 
 Route::get('edit', 'PuntoRecoleccionController@edit');
-Route::get('edit', 'PuntoRecoleccionController@edit')
-         ->name('edit');//con este llamas en la vista   
+Route::post('edit', 'PuntoRecoleccionController@edit')
+         ->name('edit');//con este llamas en la vista 
+         
+Route::put('update', 'PuntoRecoleccionController@update');
+Route::put('update', 'PuntoRecoleccionController@update')
+         ->name('update');//con este llamas en la vista 
+
 Route::resource('puntosReciclaje','PuntoRecoleccionController');
 /*Route::post('/puntosRecoleccion', 'HomeController@vistaPuntos');
 

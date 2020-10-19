@@ -78,7 +78,7 @@ class PuntoRecoleccionController extends Controller
      */
     public function edit(PuntoReciclaje $puntoreciclaje)
     {
-        return view('show',compact('puntoreciclaje'));
+        return view('edit',compact('puntoreciclaje'));
     }
 
     /**

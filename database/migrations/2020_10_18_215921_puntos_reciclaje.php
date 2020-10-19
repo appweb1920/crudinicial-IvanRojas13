@@ -17,8 +17,8 @@ class PuntosReciclaje extends Migration
             $table->id();
             $table->string('direccion');
             $table->string('tipoBasura');
-            $table->integer('horaApertura');
-            $table->integer('horaCierre');
+            $table->string('horaApertura');
+            $table->string('horaCierre');
             $table->timestamps();
         });
     }

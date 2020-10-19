@@ -21,11 +21,11 @@
     <table class="table table-bordered">
         <tr>
             <th>No</th>
-            <th>direccion</th>
-            <th>tipoBasura</th>
-            <th>horaApertura</th>
-            <th>horaCierre</th>
-            <th width="280px">Action</th>
+            <th>Direccion</th>
+            <th>Tipo de Basura</th>
+            <th>Hora Apertura</th>
+            <th>Hora Cierre</th>
+            <th width="280px">Accion</th>
         </tr>
         @foreach ($puntosreciclaje as $punto)
         <tr>
