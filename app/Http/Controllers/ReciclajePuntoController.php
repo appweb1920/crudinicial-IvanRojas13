@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Recolector;
 use Illuminate\Http\Request;
+use App\ReciclajePunto;
+use App\Recolector;
+use App\PuntoReciclaje;
 
-class RecolectoresController extends Controller
+class ReciclajePuntoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +16,10 @@ class RecolectoresController extends Controller
      */
     public function index()
     {
+        $puntosReciclaje = PuntoReciclaje::all();
         $recolectores = Recolector::all();
-        return view('indexRecolector')->with('recolectores',$recolectores);
+        $puntosRecolector = ReciclajePunto::all();
+        
     }
 
     /**
@@ -25,7 +29,7 @@ class RecolectoresController extends Controller
      */
     public function create()
     {
-        return view('createRecolector');
+        //
     }
 
     /**
@@ -36,21 +40,13 @@ class RecolectoresController extends Controller
      */
     public function store(Request $request)
     {
-        $recolectores = new Recolector();
-        $recolectores->nombre = $request->nombre;
-        $recolectores->diaRecoleccion = $request->diaRecoleccion;
-        $recolectores->save();
-  
-        //PuntoReciclaje::create($request->all());
-   
-        return redirect()->route('indexRecolector')
-                        ->with('success','Recolector añadido');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Recolector  $recolector
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -61,7 +57,7 @@ class RecolectoresController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Recolector  $recolector
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -73,7 +69,7 @@ class RecolectoresController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Recolector  $recolector
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -84,7 +80,7 @@ class RecolectoresController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Recolector  $recolector
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

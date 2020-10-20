@@ -19,28 +19,28 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Direccion:</strong>
-                    <input type="text" name="direccion" value="{{ $puntoreciclaje->direccion }}" class="form-control" placeholder="Direccion">
+                    <input type="text" name="direccion" value="{{ $puntosreciclaje->direccion }}" class="form-control" placeholder="Direccion">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Tipo Basura:</strong>
-                    <input type="text" name="tipoBasura" value="{{ $puntoreciclaje->tipoBasura }}" class="form-control" placeholder="Tipo Basura">
+                    <input type="text" name="tipoBasura" value="{{ $puntosreciclaje->tipoBasura }}" class="form-control" placeholder="Tipo Basura">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Hora Apertura:</strong>
-                    <input type="text" name="horaApertura" value="{{ $puntoreciclaje->horaApertura }}" class="form-control" placeholder="Hora Apertura">
+                    <input type="text" name="horaApertura" value="{{ $puntosreciclaje->horaApertura }}" class="form-control" placeholder="Hora Apertura">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Hora Cierre:</strong>
-                    <input type="text" name="horaCierre" value="{{ $puntoreciclaje->horaCierre }}" class="form-control" placeholder="Hora Cierre">
+                    <input type="text" name="horaCierre" value="{{ $puntosreciclaje->horaCierre }}" class="form-control" placeholder="Hora Cierre">
                 </div>
             </div>
-            <input type="hidden" name="id" value="{{$puntoreciclaje->id}}">
+            <input type="hidden" name="id" value="{{$puntosreciclaje->id}}">
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
               <button type="submit" class="btn btn-primary">Submit</button>
             </div>

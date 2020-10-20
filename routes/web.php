@@ -13,11 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/', function () {return "hola";});
-//Route::get('/', 'PuntoRecoleccionController@index');
+
 Route::get('create', 'PuntoRecoleccionController@create');
 // agregar nombre
-Route::get('create', 'PuntoRecoleccionController@create')
+Route::post('create', 'PuntoRecoleccionController@create')
          ->name('create');//con este llamas en la vista
 
 Route::get('index', 'PuntoRecoleccionController@index');
@@ -36,7 +35,7 @@ Route::delete('destroy', 'PuntoRecoleccionController@destroy')
          ->name('destroy');//con este llamas en la vista
 
 Route::get('show', 'PuntoRecoleccionController@show');
-Route::get('show', 'PuntoRecoleccionController@show')
+Route::post('show', 'PuntoRecoleccionController@show')
          ->name('show');//con este llamas en la vista
 
 Route::get('edit', 'PuntoRecoleccionController@edit');
@@ -48,7 +47,4 @@ Route::put('update', 'PuntoRecoleccionController@update')
          ->name('update');//con este llamas en la vista 
 
 Route::resource('puntosReciclaje','PuntoRecoleccionController');
-/*Route::post('/puntosRecoleccion', 'HomeController@vistaPuntos');
-
-Route::get('/editar{id}', 'HomeController@Edita');
-Route::post('/editar/guardaEditPunto', 'HomeController@guardaEditPunto');*/
+Route::resource('recolectores','RecolectoresController');

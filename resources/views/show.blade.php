@@ -1,5 +1,7 @@
+
 @extends('layaout')
 @section('content')
+@csrf
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
@@ -10,30 +12,31 @@
             </div>
         </div>
     </div>
-   
+
+    <input type="hidden" name="id" value="{{$puntosreciclaje->id}}">
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Direccion:</strong>
-                {{ $puntoreciclaje->direccion }}
+                {{$puntosreciclaje->direccion}}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Tipo Basura:</strong>
-                {{ $puntoreciclaje->tipoBasura }}
+                {{$puntosreciclaje->tipoBasura}}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Hora Apertura:</strong>
-                {{ $puntoreciclaje->horaApertura }}
+                {{$puntosreciclaje->horaApertura}}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Hora Cierre:</strong>
-                {{ $puntoreciclaje->horaCierre }}
+                {{$puntosreciclaje->horaCierre}}
             </div>
         </div>
     </div>

@@ -11,11 +11,9 @@ class PuntoReciclaje extends Model
     protected $fillable = [
         'direccion', 'tipoBasura', 'horaApertura', 'horaCierre'
     ];
-    //protected $table="puntos";
-    //protected $fillable=['nombre'];
 
-    public function getPuntos()
+    public function getRecolector()
     {
-        return $puntosreciclaje = PuntoReciclaje::where('id',$this->id)->get();
+        return $this->belongsToMany(Recolector::class);
     }
 }
