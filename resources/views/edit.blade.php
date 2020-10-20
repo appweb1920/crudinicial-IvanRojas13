@@ -40,6 +40,7 @@
                     <input type="text" name="horaCierre" value="{{ $puntoreciclaje->horaCierre }}" class="form-control" placeholder="Hora Cierre">
                 </div>
             </div>
+            <input type="hidden" name="id" value="{{$puntoreciclaje->id}}">
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
               <button type="submit" class="btn btn-primary">Submit</button>
             </div>

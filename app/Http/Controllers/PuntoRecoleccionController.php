@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\puntoReciclaje as ResourcesPuntoReciclaje;
 use Illuminate\Http\Request;
 use App\PuntoReciclaje;
 use App\Recolector;
+use PuntosReciclaje;
 
 class PuntoRecoleccionController extends Controller
 {
@@ -15,10 +17,8 @@ class PuntoRecoleccionController extends Controller
      */
     public function index()
     {
-        /*$puntosreciclaje = PuntoReciclaje::latest()->paginate(5);
-  
-        return view('index',compact('puntosreciclaje'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);*/
+        //$puntosreciclaje = PuntoReciclaje::latest()->paginate(5);
+
 
         $puntosreciclaje = PuntoReciclaje::all();
         return view('index')->with('puntosreciclaje',$puntosreciclaje);
@@ -43,14 +43,21 @@ class PuntoRecoleccionController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        /*$request->validate([
             'direccion' => 'required',
             'tipoBasura' => 'required',
             'horaApertura' => 'required',
             'horaCierre' => 'required',
-        ]);
+        ]);*/
+
+        $puntoreciclaje = new PuntoReciclaje;
+        $puntoreciclaje->direccion = $request->direccion;
+        $puntoreciclaje->tipoBasura = $request->tipoBasura;
+        $puntoreciclaje->horaApertura = $request->horaApertura;
+        $puntoreciclaje->horaCierre = $request->horaCierre;
+        $puntoreciclaje->save();
   
-        PuntoReciclaje::create($request->all());
+        //PuntoReciclaje::create($request->all());
    
         return redirect()->route('index')
                         ->with('success','Punto de recoleccion añadido');
@@ -62,13 +69,16 @@ class PuntoRecoleccionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(PuntoReciclaje $puntoreciclaje)
+    public function show($id)
     {
-        //$puntorecoleccion = PuntoReciclaje::find($id);
         //$recolectores = Recolector::where('idPunto',$id)->get();
         //return view('detallePuntoReciclaje')->with($puntorecoleccion);
+        //$puntosreciclaje = PuntoReciclaje::where();
+        //$puntosreciclaje = PuntoReciclaje::where('id', $this->id)->get();
+        //return view('show')->with('puntoreciclaje',$puntoreciclaje);
+        $puntoreciclaje = PuntoReciclaje::find($id);
 
-        return view('show',compact('puntoreciclaje'));
+        return view('show')->with('puntoreciclaje', $puntoreciclaje);
     }
 
     /**
@@ -77,9 +87,11 @@ class PuntoRecoleccionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(PuntoReciclaje $puntoreciclaje)
+    public function edit($id)
     {
-        return view('edit',compact('puntoreciclaje'));
+        $puntoreciclaje = PuntoReciclaje::find($id);
+
+        return view('edit')->with('puntoreciclaje', $puntoreciclaje);
     }
 
     /**

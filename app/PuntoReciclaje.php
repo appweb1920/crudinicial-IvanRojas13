@@ -14,8 +14,8 @@ class PuntoReciclaje extends Model
     //protected $table="puntos";
     //protected $fillable=['nombre'];
 
-    /*public function getRecolectores()
+    public function getPuntos()
     {
-        return $recolectores = Recolector::where('id',$this->id)->get();
-    }*/
+        return $puntosreciclaje = PuntoReciclaje::where('id',$this->id)->get();
+    }
 }
