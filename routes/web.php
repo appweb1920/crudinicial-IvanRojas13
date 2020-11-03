@@ -48,3 +48,6 @@ Route::put('update', 'PuntoRecoleccionController@update')
 
 Route::resource('puntosReciclaje','PuntoRecoleccionController');
 Route::resource('recolectores','RecolectoresController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
